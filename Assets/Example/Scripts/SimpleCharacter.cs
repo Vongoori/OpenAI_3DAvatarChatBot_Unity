@@ -17,7 +17,13 @@ public class SimpleCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Simple Character start 0 ");
         anim = GetComponentInChildren<Animator>();
+        if (anim == null)
+        {
+            Debug.Log("Simple Character anim is null");
+        }
+        Debug.Log("Simple Character start 1");
     }
 
     public void Think (string text)

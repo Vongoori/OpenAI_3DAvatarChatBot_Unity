@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Example/DemoScenes/AvatarChatBotDemo.unity
+    guid: 1c18422f6f2502a41803fbaed2954dde
   m_configObjects: {}

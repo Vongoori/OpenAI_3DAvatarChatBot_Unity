@@ -81,9 +81,11 @@ namespace OpenAI_Unity
 
         private void Start()
         {
+            Debug.Log("OAI Completion start 0 ");
             memory = GetDefaultInformation();
-            ResponseReceivedEvent1?.Invoke(memory.ToString());
+            //ResponseReceivedEvent1?.Invoke(memory.ToString());
             Debug.Log("Start - memory: " + memory);
+            Debug.Log("OAI Completion start 1 ");
         }
 
 
