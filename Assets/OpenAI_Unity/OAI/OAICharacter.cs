@@ -15,6 +15,7 @@ namespace OpenAI_Unity
     {
         protected override StringBuilder GetDefaultInformation()
         {
+            Debug.Log("GetDefaultInformation -  OAICharacter");
             var sb = base.GetDefaultInformation();
             sb.Replace("[Subject]", this.characterName);
             sb.Append($"\n\nHuman: Hi\n{characterName}: Hello\nHuman: ");

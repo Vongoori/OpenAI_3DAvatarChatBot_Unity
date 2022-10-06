@@ -28,8 +28,9 @@ public class SimpleCharacter : MonoBehaviour
 
     public void Think (string text)
     {
-        //string chat = chatText.text;
-        //chat = chat + "/n"+text;
+        string chat = chatText.text;
+        chat = chat + "/n" + text;
+
         chatText.text = text;
         anim.SetTrigger("Think");
     }
@@ -38,18 +39,18 @@ public class SimpleCharacter : MonoBehaviour
     {
         string chat = chatText.text;
         chatText.text = "";
-        Debug.Log("////////////////////// :  "+chat);
+        Debug.Log("////////////////////// :  " + chat);
         chat = chat + "/n" + choices[0].ToString();
         Debug.Log("////////////////////// :  " + chat);
         chatText.text = chat;
-       
-        //chatText.text = choices[0].ToString();
+
+        chatText.text = choices[0].ToString();
         //Instantiate(ResponseTextPrefab).Init(this.gameObject, choices[0].Text);
         anim.SetTrigger("Talk");
-        if (Mathf.Approximately(verticalScrollbar.value, 0f))
-        {
-            StartCoroutine("ScrollToBottom");
-        }
+        //if (Mathf.Approximately(verticalScrollbar.value, 0f))
+        //{
+        //    StartCoroutine("ScrollToBottom");
+        //}
     }
 
     public void Talk(string text)
@@ -59,21 +60,22 @@ public class SimpleCharacter : MonoBehaviour
         chatText.text = chat;
 
         chatText.text = text;
+
         //Instantiate(ResponseTextPrefab).Init(this.gameObject, choices[0].Text);
         anim.SetTrigger("Talk");
     }
 
-    IEnumerator ScrollToBottom()
-    {
-        yield return new WaitForEndOfFrame();
-        Canvas.ForceUpdateCanvases();
+    //IEnumerator ScrollToBottom()
+    //{
+    //    yield return new WaitForEndOfFrame();
+    //    Canvas.ForceUpdateCanvases();
 
-        item.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
-        item.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+    //    item.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+    //    item.GetComponent<ContentSizeFitter>().SetLayoutVertical();
 
-        scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
-        scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+    //    scrollRect.content.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+    //    scrollRect.content.GetComponent<ContentSizeFitter>().SetLayoutVertical();
 
-        scrollRect.verticalNormalizedPosition = 0;
-    }
+    //    scrollRect.verticalNormalizedPosition = 0;
+    //}
 }

@@ -83,10 +83,13 @@ namespace OpenAI_Unity
         {
             Debug.Log("OAI Completion start 0 ");
             memory = GetDefaultInformation();
-            //ResponseReceivedEvent1?.Invoke(memory.ToString());
             Debug.Log("Start - memory: " + memory);
+            
+            
             Debug.Log("OAI Completion start 1 ");
         }
+
+        
 
 
         public void Brainwash(bool resetToDefault = true)
@@ -100,6 +103,7 @@ namespace OpenAI_Unity
         /// <returns></returns>
         protected virtual StringBuilder GetDefaultInformation()
         {
+            Debug.Log("GetDefaultInformation -  OAICompletion");
             StringBuilder sb = new StringBuilder();
             sb.Append(Description);
 
